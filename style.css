@@ -1,0 +1,35 @@
+.lang {
+    margin: 20px auto 10px;
+}
+
+button {
+    margin: 30px 15px;
+}
+
+.border-container {
+    border: 1px solid #000;
+}
+
+.bar-container {
+    width: 500px;
+    padding-bottom: 20px;
+}
+
+.bar-back {
+    background: #DDD;
+}
+
+.bar-front {
+    font-size: 14px;
+    color: #FFF;
+}
+
+#cpp {
+    background: #f34b7d;
+    width: 79.6%;
+}
+
+#scala {
+    background: #c22d40;
+    width: 20.4%;
+}

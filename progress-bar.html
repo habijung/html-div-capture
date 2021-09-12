@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Save Progress Bars</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="html2canvas.min.js"></script>
+    </head>
+    <body>
+        <div class="border-container">
+            <div id="capture" class="w3-container bar-container">
+                <div class="lang">&bullet; C++</div>
+                <div class="w3-round-xlarge bar-back">
+                    <div id="cpp" class="w3-container w3-round-xlarge bar-front">79.6%</div>
+                </div>
+
+                <div class="lang">&bullet; Scala</div>
+                <div class="w3-round-xlarge bar-back">
+                    <div id="scala" class="w3-container w3-round-xlarge bar-front">20.4%</div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" onclick="saveAs()">Save to PNG</button>
+
+        <script type="text/javascript">
+        function saveAs(){
+            html2canvas(document.getElementById('capture'), { sacle: 10 }).then(function(canvas) {
+                var dataURL = canvas.toDataURL('image/png', 1.0);
+                downloadImage(dataURL, 'bar.png');
+            });            
+        }
+
+        function downloadImage(data, filename) {
+            var saveBox = document.createElement('a');
+            saveBox.href = data;
+            saveBox.download = filename;
+            document.body.appendChild(saveBox);
+            saveBox.click();
+        }
+        </script>
+    </body>
+</html>
